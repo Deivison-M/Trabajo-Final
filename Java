@@ -1,0 +1,49 @@
+package trabajofinal;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class TrabajoFinal {
+    
+    public static void main(String[] args) {
+        int numero = 0;
+        int x = 0;
+        int respuesta = 0;
+    
+        Scanner escaner = new Scanner(System.in);
+    
+        System.out.print("Escriba numero positivo para definir el tamaño de la lista.");
+        numero = escaner.nextInt();
+        //int[] Lista = new int[numero];
+        List Lista =new ArrayList();
+        while (x<numero)
+        { 
+            System.out.print("Escriba un numero para la posicion "+x);
+            //Lista[x] = escaner.nextInt();
+            Lista.add( escaner.nextInt());
+            x++;
+        }
+        
+        Collections.sort(Lista);
+           
+        System.out.print("Ingrese 1 para ordernar la lista de manera ascendente y 2 de forma descendente");
+        respuesta =  escaner.nextInt();
+        x = 0;
+        if (respuesta == 1) {
+            while (x<numero)
+            { 
+                System.out.println(Lista.get(x));            
+                x++;
+            }   
+        }else
+        {
+            while (numero > 0)
+            { 
+                System.out.println(Lista.get(numero-1));            
+                numero--;
+            }
+        }  
+    }
+}
